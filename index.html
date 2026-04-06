@@ -3,31 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anas Shaikh | Portfolio</title>
+<title>Anas Shaikh | Ultra Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
-
+*{margin:0;padding:0;box-sizing:border-box;}
 body{
-background:#0f172a;
-color:white;
+background:#0a0f0d;
+color:#e6fff6;
+font-family:Poppins;
 overflow-x:hidden;
 }
 
-/* BACKGROUND GLOW */
-.blob{
+/* GLOW ORBS */
+.orb{
 position:fixed;
-width:300px;
-height:300px;
-background:linear-gradient(45deg,#00ffcc,#00ccff);
 border-radius:50%;
-filter:blur(120px);
+filter:blur(100px);
 z-index:-1;
 }
-.blob1{top:0;left:0;}
-.blob2{bottom:0;right:0;}
+.o1{width:400px;height:400px;background:#00ffc8;top:-100px;left:-100px;}
+.o2{width:300px;height:300px;background:#00aaff;bottom:0;right:0;}
 
 /* NAV */
 nav{
@@ -41,10 +38,8 @@ background:rgba(0,0,0,0.6);
 backdrop-filter:blur(10px);
 z-index:100;
 }
-nav a{
-color:white;
-text-decoration:none;
-}
+nav a{color:#ccc;text-decoration:none;}
+nav a:hover{color:#00ffc8;}
 
 /* HERO */
 .hero{
@@ -55,25 +50,30 @@ justify-content:center;
 align-items:center;
 text-align:center;
 }
-
-.hero h1{font-size:60px;}
-.hero span{color:#00ffcc;}
-
-.typing{
-color:#00ffcc;
-margin-top:10px;
-font-size:22px;
-height:30px;
+.hero h1{
+font-family:Orbitron;
+font-size:60px;
+background:linear-gradient(45deg,#00ffc8,#00aaff);
+-webkit-background-clip:text;
+color:transparent;
 }
+.typing{margin-top:10px;color:#00ffc8;height:30px;}
 
 /* BUTTON */
 .btn{
 margin-top:20px;
-padding:10px 20px;
-background:#00ffcc;
-border:none;
+padding:10px 25px;
+background:transparent;
+border:2px solid #00ffc8;
+color:#00ffc8;
 border-radius:20px;
 cursor:pointer;
+transition:0.3s;
+}
+.btn:hover{
+background:#00ffc8;
+color:black;
+box-shadow:0 0 20px #00ffc8;
 }
 
 /* SECTIONS */
@@ -82,17 +82,18 @@ padding:80px 20px;
 text-align:center;
 }
 
+/* GLASS CARD */
 .card{
 background:rgba(255,255,255,0.05);
+backdrop-filter:blur(20px);
+border-radius:20px;
 padding:20px;
-margin:20px;
-border-radius:15px;
-backdrop-filter:blur(10px);
 transition:0.3s;
+transform-style:preserve-3d;
 }
 .card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 20px #00ffcc;
+transform:rotateY(10deg) rotateX(5deg);
+box-shadow:0 0 30px #00ffc8;
 }
 
 /* GRID */
@@ -102,31 +103,27 @@ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
-/* FOOTER */
-footer{
-text-align:center;
-padding:20px;
+/* PARTICLES */
+.particle{
+position:fixed;
+width:5px;height:5px;
+background:#00ffc8;
+border-radius:50%;
+pointer-events:none;
+opacity:0.7;
 }
 
-/* SCROLL ANIMATION */
-.fade{
-opacity:0;
-transform:translateY(40px);
-transition:0.6s;
-}
-.show{
-opacity:1;
-transform:translateY(0);
-}
+/* SCROLL */
+.fade{opacity:0;transform:translateY(40px);transition:0.6s;}
+.show{opacity:1;transform:translateY(0);}
 </style>
 </head>
 
 <body>
 
-<div class="blob blob1"></div>
-<div class="blob blob2"></div>
+<div class="orb o1"></div>
+<div class="orb o2"></div>
 
-<!-- NAV -->
 <nav>
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
@@ -134,126 +131,70 @@ transform:translateY(0);
 <a href="#contact">Contact</a>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
-<h1>Anas <span>Shaikh</span></h1>
+<h1>Anas Shaikh</h1>
 <div class="typing"></div>
 <button class="btn" onclick="scrollDown()">Explore</button>
 </div>
 
-<!-- ABOUT -->
 <section id="about" class="fade">
-<h2>About Me</h2>
-<div class="card">
-<p>
-Computer Engineering student passionate about building real-world applications,
-strong in Java, Python, and Data Structures.
-</p>
-</div>
+<h2>About</h2>
+<div class="card">Passionate developer building scalable applications.</div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills" class="fade">
 <h2>Skills</h2>
 <div class="grid">
-
 <div class="card">Python</div>
 <div class="card">Java</div>
 <div class="card">C++</div>
-<div class="card">SQL</div>
-
 </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects" class="fade">
 <h2>Projects</h2>
 <div class="grid">
-
-<div class="card">
-<h3>Voting System</h3>
-<p>Secure voting app with authentication</p>
-</div>
-
-<div class="card">
-<h3>Banking System</h3>
-<p>Console-based banking system in C</p>
-</div>
-
+<div class="card">Voting System</div>
+<div class="card">Banking System</div>
 </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="fade">
 <h2>Contact</h2>
-<div class="card">
-<p>Email: anas.shaikh@gmail.com</p>
-<p>Phone: +91 90047</p>
-</div>
+<div class="card">anas.shaikh@gmail.com</div>
 </section>
 
-<footer>
-© 2026 Anas Shaikh
-</footer>
-
 <script>
-// TYPING EFFECT
-const words = ["Software Engineer","Java Developer","Problem Solver"];
-let i=0,j=0,current="",isDeleting=false;
-
+// TYPING
+const words=["Software Engineer","Full Stack Developer","Problem Solver"];
+let i=0,j=0,cur="",del=false;
 function type(){
-current=words[i];
-
-if(isDeleting){j--;} else{j++;}
-
-document.querySelector(".typing").textContent=current.substring(0,j);
-
-if(!isDeleting && j==current.length){
-isDeleting=true;
-setTimeout(type,1000);
-return;
-}
-
-if(isDeleting && j==0){
-isDeleting=false;
-i=(i+1)%words.length;
-}
-
-setTimeout(type,isDeleting?50:100);
+cur=words[i];
+if(del){j--;} else{j++;}
+document.querySelector(".typing").textContent=cur.substring(0,j);
+if(!del && j==cur.length){del=true;setTimeout(type,1000);return;}
+if(del && j==0){del=false;i=(i+1)%words.length;}
+setTimeout(type,del?50:100);
 }
 type();
 
-// SCROLL DOWN
+// SCROLL
 function scrollDown(){
 document.getElementById("about").scrollIntoView({behavior:"smooth"});
 }
-
-// SCROLL ANIMATION
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
+const obs=new IntersectionObserver(e=>{
+e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("show");});
 });
-});
+document.querySelectorAll(".fade").forEach(el=>obs.observe(el));
 
-document.querySelectorAll(".fade").forEach(el=>{
-observer.observe(el);
-});
-
-// CURSOR GLOW
-const glow=document.createElement("div");
-glow.style.position="fixed";
-glow.style.width="200px";
-glow.style.height="200px";
-glow.style.background="radial-gradient(circle, rgba(0,255,204,0.3), transparent)";
-glow.style.borderRadius="50%";
-glow.style.pointerEvents="none";
-document.body.appendChild(glow);
-
+// CURSOR GLOW + PARTICLES
 document.addEventListener("mousemove",e=>{
-glow.style.left=e.clientX-100+"px";
-glow.style.top=e.clientY-100+"px";
+let glow=document.createElement("div");
+glow.className="particle";
+glow.style.left=e.clientX+"px";
+glow.style.top=e.clientY+"px";
+document.body.appendChild(glow);
+setTimeout(()=>glow.remove(),500);
 });
 </script>
 
