@@ -5,104 +5,107 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anas Shaikh | Portfolio</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
+body{
+background:linear-gradient(-45deg,#0f172a,#1e293b,#020617,#1e293b);
+background-size:400% 400%;
+animation:bg 10s ease infinite;
+color:white;
 }
 
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #0f172a, #1e293b);
-    color: white;
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
-/* Navbar */
-nav {
-    position: fixed;
-    width: 100%;
-    padding: 15px;
-    text-align: center;
-    background: rgba(0,0,0,0.5);
-    backdrop-filter: blur(10px);
+/* NAV */
+nav{
+position:fixed;width:100%;
+display:flex;justify-content:center;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(10px);
+padding:15px;
+z-index:100;
+}
+nav a{margin:0 15px;color:white;text-decoration:none;}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+.hero h1{font-size:60px;}
+.typing{color:#ff4d6d;font-weight:bold;}
+
+.btn{
+margin-top:20px;
+padding:12px 25px;
+background:#ff4d6d;
+border:none;
+border-radius:25px;
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+.btn:hover{transform:scale(1.1);}
+
+/* SECTION */
+section{padding:80px 20px;}
+.container{max-width:1100px;margin:auto;}
+
+/* CARD */
+.card{
+background:rgba(255,255,255,0.05);
+padding:25px;
+border-radius:15px;
+margin:20px 0;
+backdrop-filter:blur(15px);
+transition:0.4s;
+opacity:0;
+transform:translateY(40px);
+}
+.card.show{
+opacity:1;
+transform:translateY(0);
+}
+.card:hover{
+box-shadow:0 0 20px #ff4d6d;
 }
 
-nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
 }
 
-/* Hero */
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
+/* SKILLS */
+.skill{margin:15px 0;}
+.bar{background:#334155;border-radius:20px;}
+.fill{
+height:10px;
+background:#ff4d6d;
+border-radius:20px;
 }
 
-.hero h1 {
-    font-size: 50px;
+/* SOCIAL */
+.social a{
+margin:0 10px;
+color:#ff4d6d;
+text-decoration:none;
+font-weight:bold;
 }
 
-.typing {
-    color: #ff4d6d;
-    font-weight: bold;
-}
-
-.btn {
-    margin-top: 20px;
-    padding: 12px 25px;
-    border: none;
-    background: #ff4d6d;
-    color: white;
-    border-radius: 25px;
-    cursor: pointer;
-}
-
-/* Sections */
-section {
-    padding: 80px 20px;
-}
-
-.container {
-    max-width: 1000px;
-    margin: auto;
-}
-
-/* Cards */
-.card {
-    background: rgba(255,255,255,0.05);
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: scale(1.03);
-}
-
-/* Skills */
-.skills span {
-    display: inline-block;
-    background: #ff4d6d;
-    padding: 8px 12px;
-    margin: 5px;
-    border-radius: 20px;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #020617;
-}
+/* FOOTER */
+footer{text-align:center;padding:20px;background:#020617;}
 </style>
 </head>
 
@@ -116,9 +119,9 @@ footer {
 </nav>
 
 <div class="hero">
-    <h1>Anas Shaikh</h1>
-    <p>I am a <span class="typing"></span></p>
-    <button class="btn" onclick="scrollToSection()">View My Work</button>
+<h1>Anas Shaikh</h1>
+<p>I am a <span class="typing"></span></p>
+<button class="btn" onclick="scrollToProjects()">View Projects</button>
 </div>
 
 <section id="about">
@@ -126,8 +129,7 @@ footer {
 <h2>About Me</h2>
 <div class="card">
 <p>
-Computer Engineering student passionate about building secure and scalable applications.
-Strong in Data Structures, Algorithms, and problem solving.
+Computer Engineering student passionate about building scalable applications and solving real-world problems.
 </p>
 </div>
 </div>
@@ -136,15 +138,14 @@ Strong in Data Structures, Algorithms, and problem solving.
 <section id="skills">
 <div class="container">
 <h2>Skills</h2>
-<div class="card skills">
-<span>Python</span>
-<span>Java</span>
-<span>C++</span>
-<span>Data Structures</span>
-<span>SQL</span>
-<span>Machine Learning</span>
-<span>Web Development</span>
+
+<div class="card">
+<div class="skill">Python<div class="bar"><div class="fill" style="width:85%"></div></div></div>
+<div class="skill">Java<div class="bar"><div class="fill" style="width:80%"></div></div></div>
+<div class="skill">C++<div class="bar"><div class="fill" style="width:75%"></div></div></div>
+<div class="skill">DSA<div class="bar"><div class="fill" style="width:85%"></div></div></div>
 </div>
+
 </div>
 </section>
 
@@ -152,18 +153,21 @@ Strong in Data Structures, Algorithms, and problem solving.
 <div class="container">
 <h2>Projects</h2>
 
+<div class="grid">
+
 <div class="card">
 <h3>Advanced Voting System</h3>
-<p>Secure voting app with authentication and real-time vote counting.</p>
+<p>Secure voting system with authentication and real-time counting.</p>
 <button class="btn">GitHub</button>
 </div>
 
 <div class="card">
-<h3>Banking Management System</h3>
+<h3>Banking System</h3>
 <p>Banking system using C and linked lists.</p>
 <button class="btn">GitHub</button>
 </div>
 
+</div>
 </div>
 </section>
 
@@ -172,8 +176,15 @@ Strong in Data Structures, Algorithms, and problem solving.
 <h2>Contact</h2>
 <div class="card">
 <p>Email: anas.shaikh@gmail.com</p>
-<p>Phone: +91 90047 44846</p>
-<p>Location: Mumbai</p>
+<p>Phone: +91 90047</p>
+
+<div class="social">
+<a href="#">GitHub</a>
+<a href="#">LinkedIn</a>
+</div>
+
+<button class="btn">Download Resume</button>
+
 </div>
 </div>
 </section>
@@ -183,28 +194,38 @@ Strong in Data Structures, Algorithms, and problem solving.
 </footer>
 
 <script>
-// Smooth scroll
-function scrollToSection(){
-document.getElementById("about").scrollIntoView({behavior:"smooth"});
-}
-
-// Typing effect
-const text = ["Developer", "Problem Solver", "Tech Enthusiast"];
-let i = 0, j = 0, current = "", isDeleting = false;
+// typing
+const words=["Developer","Engineer","Problem Solver"];
+let i=0,j=0,cur="",del=false;
 
 function type(){
-current = text[i];
-if(!isDeleting){
-document.querySelector(".typing").textContent = current.substring(0, j++);
-if(j > current.length){ isDeleting = true; setTimeout(type,1000); return;}
+cur=words[i];
+if(!del){
+document.querySelector(".typing").textContent=cur.substring(0,j++);
+if(j>cur.length){del=true;setTimeout(type,1000);return;}
+}else{
+document.querySelector(".typing").textContent=cur.substring(0,j--);
+if(j==0){del=false;i=(i+1)%words.length;}
 }
-else{
-document.querySelector(".typing").textContent = current.substring(0, j--);
-if(j == 0){ isDeleting = false; i = (i+1)%text.length;}
-}
-setTimeout(type, 100);
+setTimeout(type,100);
 }
 type();
+
+// scroll
+function scrollToProjects(){
+document.getElementById("projects").scrollIntoView({behavior:"smooth"});
+}
+
+// animation
+const cards=document.querySelectorAll(".card");
+window.addEventListener("scroll",()=>{
+cards.forEach(c=>{
+let top=c.getBoundingClientRect().top;
+if(top<window.innerHeight-100){
+c.classList.add("show");
+}
+});
+});
 </script>
 
 </body>
