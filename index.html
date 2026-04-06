@@ -3,36 +3,97 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Infographic Portfolio</title>
+<title>Anas Shaikh | Ultra Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Inter;}
-
+*{margin:0;padding:0;box-sizing:border-box;}
 body{
-background:#0b0f1a;
-color:#e5e7eb;
+background:#0a0f0d;
+color:#e6fff6;
+font-family:Poppins;
+overflow-x:hidden;
 }
 
-/* CONTAINER */
-.container{
-max-width:1200px;
-margin:auto;
-padding:40px 20px;
+/* GLOW ORBS */
+.orb{
+position:fixed;
+border-radius:50%;
+filter:blur(100px);
+z-index:-1;
 }
+.o1{width:400px;height:400px;background:#00ffc8;top:-100px;left:-100px;}
+.o2{width:300px;height:300px;background:#00aaff;bottom:0;right:0;}
 
-/* HEADER */
-.header{
+/* NAV */
+nav{
+position:fixed;
+width:100%;
+display:flex;
+justify-content:center;
+gap:30px;
+padding:15px;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+z-index:100;
+}
+nav a{color:#ccc;text-decoration:none;}
+nav a:hover{color:#00ffc8;}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
-margin-bottom:40px;
 }
-.header h1{
-font-size:48px;
-color:#22c55e;
+.hero h1{
+font-family:Orbitron;
+font-size:60px;
+background:linear-gradient(45deg,#00ffc8,#00aaff);
+-webkit-background-clip:text;
+color:transparent;
 }
-.header p{
-color:#9ca3af;
+.typing{margin-top:10px;color:#00ffc8;height:30px;}
+
+/* BUTTON */
+.btn{
+margin-top:20px;
+padding:10px 25px;
+background:transparent;
+border:2px solid #00ffc8;
+color:#00ffc8;
+border-radius:20px;
+cursor:pointer;
+transition:0.3s;
+}
+.btn:hover{
+background:#00ffc8;
+color:black;
+box-shadow:0 0 20px #00ffc8;
+}
+
+/* SECTIONS */
+section{
+padding:80px 20px;
+text-align:center;
+}
+
+/* GLASS CARD */
+.card{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(20px);
+border-radius:20px;
+padding:20px;
+transition:0.3s;
+transform-style:preserve-3d;
+}
+.card:hover{
+transform:rotateY(10deg) rotateX(5deg);
+box-shadow:0 0 30px #00ffc8;
 }
 
 /* GRID */
@@ -42,211 +103,100 @@ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
-/* CARD */
-.card{
-background:#111827;
-padding:20px;
-border-radius:16px;
-border:1px solid #1f2937;
-transition:0.3s;
-}
-.card:hover{
-transform:translateY(-5px);
-border-color:#22c55e;
+/* PARTICLES */
+.particle{
+position:fixed;
+width:5px;height:5px;
+background:#00ffc8;
+border-radius:50%;
+pointer-events:none;
+opacity:0.7;
 }
 
-/* STATS */
-.stat{
-text-align:center;
-}
-.stat h2{
-font-size:30px;
-color:#22c55e;
-}
-.stat p{
-font-size:14px;
-color:#9ca3af;
-}
-
-/* SECTION */
-.section{
-margin-top:50px;
-}
-.section h2{
-margin-bottom:20px;
-color:#22c55e;
-}
-
-/* SKILL BAR */
-.bar{
-background:#1f2937;
-border-radius:20px;
-overflow:hidden;
-}
-.fill{
-height:10px;
-background:#22c55e;
-}
-
-/* TIMELINE */
-.timeline{
-border-left:2px solid #22c55e;
-padding-left:20px;
-}
-.timeline-item{
-margin-bottom:20px;
-}
-.timeline-item h4{
-color:#22c55e;
-}
-
-/* TAGS */
-.tags{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-}
-.tag{
-background:#1f2937;
-padding:5px 10px;
-border-radius:10px;
-font-size:12px;
-}
-
-/* FOOTER */
-footer{
-text-align:center;
-margin-top:40px;
-color:#6b7280;
-}
+/* SCROLL */
+.fade{opacity:0;transform:translateY(40px);transition:0.6s;}
+.show{opacity:1;transform:translateY(0);}
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="orb o1"></div>
+<div class="orb o2"></div>
 
-<!-- HEADER -->
-<div class="header">
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="hero">
 <h1>Anas Shaikh</h1>
-<p>Software Engineer | Problem Solver</p>
+<div class="typing"></div>
+<button class="btn" onclick="scrollDown()">Explore</button>
 </div>
 
-<!-- STATS -->
-<div class="grid">
-<div class="card stat">
-<h2>5+</h2>
-<p>Projects</p>
-</div>
+<section id="about" class="fade">
+<h2>About</h2>
+<div class="card">Passionate developer building scalable applications.</div>
+</section>
 
-<div class="card stat">
-<h2>3</h2>
-<p>Languages</p>
-</div>
-
-<div class="card stat">
-<h2>1+</h2>
-<p>Years Learning</p>
-</div>
-
-<div class="card stat">
-<h2>100%</h2>
-<p>Dedication</p>
-</div>
-</div>
-
-<!-- ABOUT -->
-<div class="section">
-<h2>About Me</h2>
-<div class="card">
-<p>
-Computer Engineering student with strong fundamentals in programming,
-data structures, and building real-world systems.
-</p>
-</div>
-</div>
-
-<!-- SKILLS -->
-<div class="section">
+<section id="skills" class="fade">
 <h2>Skills</h2>
 <div class="grid">
-
-<div class="card">
-<p>Python</p>
-<div class="bar"><div class="fill" style="width:85%"></div></div>
+<div class="card">Python</div>
+<div class="card">Java</div>
+<div class="card">C++</div>
 </div>
+</section>
 
-<div class="card">
-<p>Java</p>
-<div class="bar"><div class="fill" style="width:80%"></div></div>
-</div>
-
-<div class="card">
-<p>C++</p>
-<div class="bar"><div class="fill" style="width:75%"></div></div>
-</div>
-
-</div>
-</div>
-
-<!-- PROJECTS -->
-<div class="section">
+<section id="projects" class="fade">
 <h2>Projects</h2>
 <div class="grid">
+<div class="card">Voting System</div>
+<div class="card">Banking System</div>
+</div>
+</section>
 
-<div class="card">
-<h3>Voting System</h3>
-<p>Secure system with authentication</p>
-<div class="tags">
-<span class="tag">Java</span>
-<span class="tag">Security</span>
-</div>
-</div>
-
-<div class="card">
-<h3>Banking System</h3>
-<p>Console-based banking system</p>
-<div class="tags">
-<span class="tag">C</span>
-<span class="tag">DSA</span>
-</div>
-</div>
-
-</div>
-</div>
-
-<!-- TIMELINE -->
-<div class="section">
-<h2>Experience</h2>
-<div class="timeline">
-
-<div class="timeline-item">
-<h4>2024</h4>
-<p>Started Computer Engineering</p>
-</div>
-
-<div class="timeline-item">
-<h4>2025</h4>
-<p>Built multiple projects</p>
-</div>
-
-</div>
-</div>
-
-<!-- CONTACT -->
-<div class="section">
+<section id="contact" class="fade">
 <h2>Contact</h2>
-<div class="card">
-<p>Email: anas.shaikh@gmail.com</p>
-<p>Phone: +91 XXXXX</p>
-</div>
-</div>
+<div class="card">anas.shaikh@gmail.com</div>
+</section>
 
-<footer>
-© 2026 Anas Shaikh
-</footer>
+<script>
+// TYPING
+const words=["Software Engineer","Full Stack Developer","Problem Solver"];
+let i=0,j=0,cur="",del=false;
+function type(){
+cur=words[i];
+if(del){j--;} else{j++;}
+document.querySelector(".typing").textContent=cur.substring(0,j);
+if(!del && j==cur.length){del=true;setTimeout(type,1000);return;}
+if(del && j==0){del=false;i=(i+1)%words.length;}
+setTimeout(type,del?50:100);
+}
+type();
 
-</div>
+// SCROLL
+function scrollDown(){
+document.getElementById("about").scrollIntoView({behavior:"smooth"});
+}
+const obs=new IntersectionObserver(e=>{
+e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("show");});
+});
+document.querySelectorAll(".fade").forEach(el=>obs.observe(el));
+
+// CURSOR GLOW + PARTICLES
+document.addEventListener("mousemove",e=>{
+let glow=document.createElement("div");
+glow.className="particle";
+glow.style.left=e.clientX+"px";
+glow.style.top=e.clientY+"px";
+document.body.appendChild(glow);
+setTimeout(()=>glow.remove(),500);
+});
+</script>
 
 </body>
 </html>
