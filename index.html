@@ -9,7 +9,19 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:#0a0f0d;color:#e6fff6;font-family:Poppins;overflow-x:hidden;}
+html{scroll-behavior:smooth;}
+
+body{
+background:#0a0f0d;
+color:#e6fff6;
+font-family:Poppins;
+overflow-x:hidden;
+}
+
+/* OFFSET FIX FOR NAVBAR */
+section{
+scroll-margin-top:90px;
+}
 
 /* ORBS */
 .orb{position:fixed;border-radius:50%;filter:blur(100px);z-index:-1;}
@@ -17,29 +29,83 @@ body{background:#0a0f0d;color:#e6fff6;font-family:Poppins;overflow-x:hidden;}
 .o2{width:300px;height:300px;background:#00aaff;bottom:0;right:0;}
 
 /* NAV */
-nav{position:fixed;width:100%;display:flex;justify-content:center;gap:30px;padding:15px;background:rgba(0,0,0,0.6);backdrop-filter:blur(10px);}
-nav a{color:#ccc;text-decoration:none;}
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:center;
+gap:30px;
+padding:15px;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+z-index:100;
+}
+nav a{
+color:#ccc;
+text-decoration:none;
+}
 nav a:hover{color:#00ffc8;}
 
 /* HERO */
-.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;}
-.hero h1{font-family:Orbitron;font-size:60px;background:linear-gradient(45deg,#00ffc8,#00aaff);-webkit-background-clip:text;color:transparent;}
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+.hero h1{
+font-family:Orbitron;
+font-size:60px;
+background:linear-gradient(45deg,#00ffc8,#00aaff);
+-webkit-background-clip:text;
+color:transparent;
+}
 .typing{margin-top:10px;color:#00ffc8;height:30px;}
 
 /* BUTTON */
-.btn{margin-top:20px;padding:10px 25px;border:2px solid #00ffc8;color:#00ffc8;border-radius:20px;cursor:pointer;}
-.btn:hover{background:#00ffc8;color:black;box-shadow:0 0 20px #00ffc8;}
+.btn{
+margin-top:20px;
+padding:10px 25px;
+border:2px solid #00ffc8;
+color:#00ffc8;
+border-radius:20px;
+cursor:pointer;
+}
+.btn:hover{
+background:#00ffc8;
+color:black;
+box-shadow:0 0 20px #00ffc8;
+}
 
 /* SECTIONS */
-section{padding:80px 20px;text-align:center;}
-h2{margin-bottom:20px;}
+section{
+padding:80px 20px;
+text-align:center;
+}
 
 /* CARD */
-.card{background:rgba(255,255,255,0.05);backdrop-filter:blur(20px);border-radius:20px;padding:25px;transition:0.3s;}
-.card:hover{transform:translateY(-8px);box-shadow:0 0 25px #00ffc8;}
+.card{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(20px);
+border-radius:20px;
+padding:25px;
+margin-top:20px;
+transition:0.3s;
+}
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 25px #00ffc8;
+}
 
 /* GRID */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
 
 /* TEXT */
 p{line-height:1.7;color:#bdeee3;font-size:15px;}
@@ -48,7 +114,12 @@ p{line-height:1.7;color:#bdeee3;font-size:15px;}
 ul{list-style:none;text-align:left;margin-top:10px;}
 ul li{margin-bottom:8px;}
 
-/* SCROLL */
+/* PHONE FIX */
+.phone{
+white-space:nowrap;
+}
+
+/* SCROLL ANIMATION */
 .fade{opacity:0;transform:translateY(40px);transition:0.6s;}
 .show{opacity:1;transform:translateY(0);}
 </style>
@@ -59,6 +130,7 @@ ul li{margin-bottom:8px;}
 <div class="orb o1"></div>
 <div class="orb o2"></div>
 
+<!-- NAV -->
 <nav>
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
@@ -66,6 +138,7 @@ ul li{margin-bottom:8px;}
 <a href="#contact">Contact</a>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
 <h1>Anas Shaikh</h1>
 <div class="typing"></div>
@@ -77,18 +150,11 @@ ul li{margin-bottom:8px;}
 <h2>About Me</h2>
 <div class="card">
 <p>
-I am a passionate Computer Engineering student with a strong foundation in software development, 
-data structures, and problem-solving. I enjoy building efficient, scalable applications and 
-continuously improving my coding skills.
+I am a Computer Engineering student passionate about software development and problem solving.
+I have strong knowledge of DSA, OOP, and system design fundamentals.
 </p>
-
 <p>
-I have hands-on experience in developing projects using Java, Python, and C++, and I am particularly 
-interested in backend development and system design.
-</p>
-
-<p>
-My goal is to become a skilled software engineer and contribute to impactful real-world solutions.
+I enjoy building scalable applications using Java, Python, and C++.
 </p>
 </div>
 </section>
@@ -96,33 +162,31 @@ My goal is to become a skilled software engineer and contribute to impactful rea
 <!-- SKILLS -->
 <section id="skills" class="fade">
 <h2>Skills</h2>
-
 <div class="grid">
 
 <div class="card">
-<h3>Programming Languages</h3>
+<h3>Programming</h3>
 <ul>
-<li>✔ Python (OOP, scripting)</li>
-<li>✔ Java (Core + DSA)</li>
-<li>✔ C++ (STL, problem solving)</li>
+<li>✔ Java</li>
+<li>✔ Python</li>
+<li>✔ C++</li>
 </ul>
 </div>
 
 <div class="card">
 <h3>Core Concepts</h3>
 <ul>
-<li>✔ Data Structures & Algorithms</li>
-<li>✔ Object-Oriented Programming</li>
-<li>✔ Operating Systems basics</li>
+<li>✔ Data Structures</li>
+<li>✔ Algorithms</li>
+<li>✔ OOP</li>
 </ul>
 </div>
 
 <div class="card">
-<h3>Tools & Technologies</h3>
+<h3>Tools</h3>
 <ul>
 <li>✔ Git & GitHub</li>
 <li>✔ VS Code</li>
-<li>✔ SQL & Database basics</li>
 </ul>
 </div>
 
@@ -132,42 +196,23 @@ My goal is to become a skilled software engineer and contribute to impactful rea
 <!-- PROJECTS -->
 <section id="projects" class="fade">
 <h2>Projects</h2>
-
 <div class="grid">
 
 <div class="card">
-<h3>🗳 Advanced Voting System</h3>
-<p>
-A secure voting system designed to ensure fair elections with authentication and vote tracking.
-</p>
+<h3>Voting System</h3>
 <ul>
-<li>✔ User authentication system</li>
-<li>✔ Real-time vote counting</li>
-<li>✔ Secure data handling</li>
+<li>✔ Authentication</li>
+<li>✔ Secure voting</li>
+<li>✔ Real-time results</li>
 </ul>
 </div>
 
 <div class="card">
-<h3>🏦 Banking Management System</h3>
-<p>
-A console-based banking system built using C and data structures to manage accounts efficiently.
-</p>
+<h3>Banking System</h3>
 <ul>
-<li>✔ Account creation & deletion</li>
-<li>✔ Deposit & withdrawal features</li>
-<li>✔ Linked list implementation</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>💻 Portfolio Website</h3>
-<p>
-A modern responsive personal portfolio built using HTML, CSS, and JavaScript.
-</p>
-<ul>
-<li>✔ Responsive design</li>
-<li>✔ Smooth animations</li>
-<li>✔ Interactive UI</li>
+<li>✔ Account management</li>
+<li>✔ Transactions</li>
+<li>✔ Data structures</li>
 </ul>
 </div>
 
@@ -178,9 +223,8 @@ A modern responsive personal portfolio built using HTML, CSS, and JavaScript.
 <section id="contact" class="fade">
 <h2>Contact</h2>
 <div class="card">
-<p><b>Email:</b> anas.shaikh@gmail.com</p>
-<p><b>Phone:</b> +91 90047</p>
-<p><b>Location:</b> Mumbai, India</p>
+<p>Email: anas.shaikh@gmail.com</p>
+<p>Phone: <span class="phone">+91 90047XXXXX</span></p>
 </div>
 </section>
 
@@ -198,12 +242,16 @@ setTimeout(type,del?50:100);
 }
 type();
 
-// SCROLL
+// SCROLL BUTTON
 function scrollDown(){
 document.getElementById("about").scrollIntoView({behavior:"smooth"});
 }
+
+// SCROLL ANIMATION
 const obs=new IntersectionObserver(e=>{
-e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("show");});
+e.forEach(x=>{
+if(x.isIntersecting){x.target.classList.add("show");}
+});
 });
 document.querySelectorAll(".fade").forEach(el=>obs.observe(el));
 </script>
