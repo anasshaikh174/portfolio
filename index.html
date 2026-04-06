@@ -5,107 +5,105 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anas Shaikh | Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
+*{margin:0;padding:0;box-sizing:border-box;}
 body{
-background:linear-gradient(-45deg,#0f172a,#1e293b,#020617,#1e293b);
-background-size:400% 400%;
-animation:bg 10s ease infinite;
-color:white;
-}
-
-@keyframes bg{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
+    font-family:'Segoe UI',sans-serif;
+    background:#0f172a;
+    color:white;
 }
 
 /* NAV */
 nav{
-position:fixed;width:100%;
-display:flex;justify-content:center;
-background:rgba(0,0,0,0.5);
-backdrop-filter:blur(10px);
-padding:15px;
-z-index:100;
+    position:fixed;
+    width:100%;
+    background:rgba(0,0,0,0.6);
+    padding:15px;
+    text-align:center;
+    backdrop-filter:blur(10px);
 }
-nav a{margin:0 15px;color:white;text-decoration:none;}
+nav a{
+    color:white;
+    margin:0 15px;
+    text-decoration:none;
+}
 
 /* HERO */
 .hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
 }
-.hero h1{font-size:60px;}
-.typing{color:#ff4d6d;font-weight:bold;}
-
-.btn{
-margin-top:20px;
-padding:12px 25px;
-background:#ff4d6d;
-border:none;
-border-radius:25px;
-color:white;
-cursor:pointer;
-transition:0.3s;
-}
-.btn:hover{transform:scale(1.1);}
+.hero h1{font-size:50px;}
+.hero p{color:#ff4d6d;}
 
 /* SECTION */
 section{padding:80px 20px;}
-.container{max-width:1100px;margin:auto;}
+.container{max-width:1000px;margin:auto;}
 
 /* CARD */
 .card{
-background:rgba(255,255,255,0.05);
-padding:25px;
-border-radius:15px;
-margin:20px 0;
-backdrop-filter:blur(15px);
-transition:0.4s;
-opacity:0;
-transform:translateY(40px);
+    background:#1e293b;
+    padding:20px;
+    border-radius:15px;
+    margin:15px 0;
+    transition:0.3s;
 }
-.card.show{
-opacity:1;
-transform:translateY(0);
-}
-.card:hover{
-box-shadow:0 0 20px #ff4d6d;
-}
+.card:hover{transform:translateY(-5px);}
 
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
+/* SKILL BARS */
+.skill{
+    margin:10px 0;
 }
-
-/* SKILLS */
-.skill{margin:15px 0;}
-.bar{background:#334155;border-radius:20px;}
+.bar{
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+}
 .fill{
-height:10px;
-background:#ff4d6d;
-border-radius:20px;
+    height:10px;
+    background:#ff4d6d;
 }
 
-/* SOCIAL */
-.social a{
-margin:0 10px;
-color:#ff4d6d;
-text-decoration:none;
-font-weight:bold;
+/* TIMELINE */
+.timeline{
+    border-left:3px solid #ff4d6d;
+    padding-left:20px;
+}
+.timeline div{
+    margin:15px 0;
+}
+
+/* STATS */
+.stats{
+    display:flex;
+    justify-content:space-around;
+    text-align:center;
+}
+.stats div{
+    font-size:20px;
+}
+
+/* BUTTON */
+.btn{
+    margin-top:10px;
+    padding:8px 15px;
+    border:none;
+    background:#ff4d6d;
+    color:white;
+    border-radius:20px;
+    cursor:pointer;
 }
 
 /* FOOTER */
-footer{text-align:center;padding:20px;background:#020617;}
+footer{
+    text-align:center;
+    padding:20px;
+    background:#020617;
+}
 </style>
 </head>
 
@@ -120,8 +118,7 @@ footer{text-align:center;padding:20px;background:#020617;}
 
 <div class="hero">
 <h1>Anas Shaikh</h1>
-<p>I am a <span class="typing"></span></p>
-<button class="btn" onclick="scrollToProjects()">View Projects</button>
+<p>Developer | Problem Solver | Tech Enthusiast</p>
 </div>
 
 <section id="about">
@@ -129,8 +126,15 @@ footer{text-align:center;padding:20px;background:#020617;}
 <h2>About Me</h2>
 <div class="card">
 <p>
-Computer Engineering student passionate about building scalable applications and solving real-world problems.
+Passionate Computer Engineering student focused on building scalable applications 
+and solving real-world problems using programming.
 </p>
+</div>
+
+<div class="stats">
+<div><b>150+</b><br>Problems Solved</div>
+<div><b>2+</b><br>Projects</div>
+<div><b>3+</b><br>Languages</div>
 </div>
 </div>
 </section>
@@ -144,6 +148,26 @@ Computer Engineering student passionate about building scalable applications and
 <div class="skill">Java<div class="bar"><div class="fill" style="width:80%"></div></div></div>
 <div class="skill">C++<div class="bar"><div class="fill" style="width:75%"></div></div></div>
 <div class="skill">DSA<div class="bar"><div class="fill" style="width:85%"></div></div></div>
+<div class="skill">SQL<div class="bar"><div class="fill" style="width:70%"></div></div></div>
+</div>
+
+</div>
+</section>
+
+<section id="education">
+<div class="container">
+<h2>Education</h2>
+
+<div class="card timeline">
+<div>
+<b>B.Tech Computer Engineering</b><br>
+Vidyalankar Institute (2024–2028)
+</div>
+
+<div>
+<b>HSC</b><br>
+Arya Gurukul College (2022–2024)
+</div>
 </div>
 
 </div>
@@ -153,8 +177,6 @@ Computer Engineering student passionate about building scalable applications and
 <div class="container">
 <h2>Projects</h2>
 
-<div class="grid">
-
 <div class="card">
 <h3>Advanced Voting System</h3>
 <p>Secure voting system with authentication and real-time counting.</p>
@@ -162,12 +184,11 @@ Computer Engineering student passionate about building scalable applications and
 </div>
 
 <div class="card">
-<h3>Banking System</h3>
+<h3>Banking Management System</h3>
 <p>Banking system using C and linked lists.</p>
 <button class="btn">GitHub</button>
 </div>
 
-</div>
 </div>
 </section>
 
@@ -176,15 +197,8 @@ Computer Engineering student passionate about building scalable applications and
 <h2>Contact</h2>
 <div class="card">
 <p>Email: anas.shaikh@gmail.com</p>
-<p>Phone: +91 90047</p>
-
-<div class="social">
-<a href="#">GitHub</a>
-<a href="#">LinkedIn</a>
-</div>
-
-<button class="btn">Download Resume</button>
-
+<p>Phone: +91 90047 44846</p>
+<p>Location: Mumbai</p>
 </div>
 </div>
 </section>
@@ -192,41 +206,6 @@ Computer Engineering student passionate about building scalable applications and
 <footer>
 <p>© 2026 Anas Shaikh</p>
 </footer>
-
-<script>
-// typing
-const words=["Developer","Engineer","Problem Solver"];
-let i=0,j=0,cur="",del=false;
-
-function type(){
-cur=words[i];
-if(!del){
-document.querySelector(".typing").textContent=cur.substring(0,j++);
-if(j>cur.length){del=true;setTimeout(type,1000);return;}
-}else{
-document.querySelector(".typing").textContent=cur.substring(0,j--);
-if(j==0){del=false;i=(i+1)%words.length;}
-}
-setTimeout(type,100);
-}
-type();
-
-// scroll
-function scrollToProjects(){
-document.getElementById("projects").scrollIntoView({behavior:"smooth"});
-}
-
-// animation
-const cards=document.querySelectorAll(".card");
-window.addEventListener("scroll",()=>{
-cards.forEach(c=>{
-let top=c.getBoundingClientRect().top;
-if(top<window.innerHeight-100){
-c.classList.add("show");
-}
-});
-});
-</script>
 
 </body>
 </html>
